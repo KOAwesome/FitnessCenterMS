@@ -39,7 +39,7 @@ class Attendance:
                 self.classes = {}
                 self.attendances = {}
         
-            # Membership management
+
             def add_membership(self, membership):
                 if membership.membership_id in self.memberships:
                     raise ValueError("Membership ID already exists.")
@@ -56,7 +56,7 @@ class Attendance:
                     raise ValueError("Membership ID not found.")
                 del self.memberships[membership_id]
         
-            # Trainer management
+
             def add_trainer(self, trainer):
                 if trainer.trainer_id in self.trainers:
                     raise ValueError("Trainer ID already exists.")
@@ -73,7 +73,7 @@ class Attendance:
                     raise ValueError("Trainer ID not found.")
                 del self.trainers[trainer_id]
         
-            # Class management
+
             def add_class(self, fitness_class):
                 if fitness_class.class_id in self.classes:
                     raise ValueError("Class ID already exists.")
@@ -90,7 +90,7 @@ class Attendance:
                     raise ValueError("Class ID not found.")
                 del self.classes[class_id]
         
-            # Attendance management
+
             def add_attendance(self, attendance):
                 if attendance.attendance_id in self.attendances:
                     raise ValueError("Attendance ID already exists.")
@@ -173,7 +173,7 @@ class FitnessCenterManagementSystem:
         cursor.execute(query, (trainer_id,))
         self.connection.commit()
 
-    # Class management
+
     def add_class(self, fitness_class):
         cursor = self.connection.cursor()
         query = "INSERT INTO Classes (class_name, trainer_id, schedule, capacity) VALUES (%s, %s, %s, %s)"
@@ -194,7 +194,7 @@ class FitnessCenterManagementSystem:
         cursor.execute(query, (class_id,))
         self.connection.commit()
 
-    # Attendance management
+
     def add_attendance(self, attendance):
         cursor = self.connection.cursor()
         query = "INSERT INTO Attendance (member_id, class_id, attendance_date) VALUES (%s, %s, %s)"
@@ -279,7 +279,6 @@ def main():
                 availability = input("Enter Trainer Availability: ")
                 system.update_trainer(trainer_id, name=name, specialty=specialty, contact_info=contact_info, availability=availability)
                 print("Trainer updated successfully.")
-
             elif choice == '6':
                 trainer_id = input("Enter Trainer ID to delete: ")
                 system.delete_trainer(trainer_id)

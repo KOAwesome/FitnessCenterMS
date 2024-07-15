@@ -2,7 +2,7 @@ CREATE DATABASE fitness_center;
 USE fitness_center;
 
 
--- Memberships Table
+
 CREATE TABLE Memberships (
     membership_id INT PRIMARY KEY AUTO_INCREMENT,
     member_name VARCHAR(255) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE Memberships (
     membership_expiry DATE NOT NULL
 );
 
--- Trainers Table
+
 CREATE TABLE Trainers (
     trainer_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE Trainers (
     availability TEXT NOT NULL
 );
 
--- Classes Table
+
 CREATE TABLE Classes (
     class_id INT PRIMARY KEY AUTO_INCREMENT,
     class_name VARCHAR(100) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE Classes (
     FOREIGN KEY (trainer_id) REFERENCES Trainers(trainer_id)
 );
 
--- Attendance Table
+
 CREATE TABLE Attendance (
     attendance_id INT PRIMARY KEY AUTO_INCREMENT,
     member_id INT NOT NULL,
@@ -40,13 +40,13 @@ CREATE TABLE Attendance (
     FOREIGN KEY (class_id) REFERENCES Classes(class_id)
 );
 
--- Drop tables if they already exist
-DROP TABLE IF EXISTS Attendance;
-DROP TABLE IF EXISTS Classes;
-DROP TABLE IF EXISTS Trainers;
-DROP TABLE IF EXISTS Memberships;
+-- -- Drop tables if they already exist
+-- DROP TABLE IF EXISTS Attendance;
+-- DROP TABLE IF EXISTS Classes;
+-- DROP TABLE IF EXISTS Trainers;
+-- DROP TABLE IF EXISTS Memberships;
 
--- Memberships Table
+
 CREATE TABLE Memberships (
     membership_id INT PRIMARY KEY AUTO_INCREMENT,
     member_name VARCHAR(255) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE Memberships (
     membership_expiry DATE NOT NULL
 );
 
--- Trainers Table
+
 CREATE TABLE Trainers (
     trainer_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE Trainers (
     availability TEXT NOT NULL
 );
 
--- Classes Table
+
 CREATE TABLE Classes (
     class_id INT PRIMARY KEY AUTO_INCREMENT,
     class_name VARCHAR(100) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE Classes (
     FOREIGN KEY (trainer_id) REFERENCES Trainers(trainer_id)
 );
 
--- Attendance Table
+
 CREATE TABLE Attendance (
     attendance_id INT PRIMARY KEY AUTO_INCREMENT,
     member_id INT NOT NULL,
